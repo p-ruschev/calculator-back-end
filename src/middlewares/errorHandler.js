@@ -1,7 +1,7 @@
 const errorHandler = function (error, req, res, next) {
   if (error) {
     res.locals.errors = [error];
-    res.status(404).render("404");
+    res.status(404).json({error:"404"});
   } else {
     next();
   }
@@ -17,10 +17,10 @@ const handleMultipleErrors = (res, error, renderView, body) => {
   } else {
     res.locals.errors = [error];
   }
-  if (body) {
-    return res.render(renderView, body);
-  } else {
-    return res.render(renderView);
-  }
+  // if (body) {
+  //   return res.render(renderView, body);
+  // } else {
+  //   return res.render(renderView);
+  // }
 };
 module.exports = { errorHandler, handleMultipleErrors };

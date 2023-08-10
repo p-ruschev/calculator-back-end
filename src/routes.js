@@ -6,7 +6,7 @@ const calculatorController = require("./controllers/calculatorController");
 router.use("/auth", userController);
 router.use("/calculator", calculatorController);
 router.use("*", (req, res) => {
-  res.status("404").render("404");
+  res.status("404").json({error: "404"});
 });
 
 module.exports = router;
