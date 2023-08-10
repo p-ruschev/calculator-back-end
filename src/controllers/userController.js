@@ -1,10 +1,6 @@
 const router = require("express").Router();
 
 const { register, login } = require("../services/userService");
-//const { getOwnTrips } = require('../services/tripService');
-const { AUTH_COOKIE_NAME } = require("../constants");
-//const { isGuest } = require('../middlewares/securityMiddleware');
-//const { isAuth } = require('../middlewares/authMiddleware');
 
 const initLogin = async (req, res) => {
   try {
